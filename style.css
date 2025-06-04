@@ -157,8 +157,8 @@ a {
 #legal {
 	color: #0f0;
 	font-size: 0.5em;
-	float: right;
-	position: absolute;
+	position: relative;
+	left: 0;
 	bottom: 0;
 }
 
@@ -180,4 +180,9 @@ span.rainbow {
 @font-face {
 	font-family: Cristola;
 	src: url(CristolaDisplay.ttf);
+}
+
+#videos-page {
+	display: flex;
+	flex-wrap: wrap;
 }
