@@ -94,6 +94,8 @@ function initialize(){
 	}
 	
 	setInterval(updateCircles);
+	console.log(window.history);
+	window.history.pushState({}, "", "/home");
 }
 
 initialize();
