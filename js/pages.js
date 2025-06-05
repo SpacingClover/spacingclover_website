@@ -3,7 +3,11 @@ function setDisplay(pagename){
 	for (let i=0;i<pages.length;i++){
 		pages[i].style.display = "none";
 	}
-	document.getElementById(pagename).style.display = "block";
+	const page = document.getElementById(pagename);
+	if (page == null){
+		page = document.getElementById("home");
+	}
+	page.style.display = "block";
 	updateAddress(pagename);
 }
 
@@ -11,4 +15,4 @@ function updateAddress(pagename){
 	window.history.pushState({}, "", "/" + pagename.toLowerCase());
 }
 
-setDisplay("home");
+setDisplay(window.location.pathname);
