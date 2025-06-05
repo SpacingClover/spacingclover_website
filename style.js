@@ -86,7 +86,7 @@ function setDisplay(idx){
 }
 
 function getPageString(idx){
-	const keys = PAGES.keys;
+	const keys = Object.keys(PAGES);
 	for(let i=0;i<keys.length;i++){
 		if (idx == PAGES[keys[i]]){
 			return keys[i];
