@@ -3,8 +3,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>SPACINGCLOVER</title>
-		<link rel="stylesheet" href="style.css">
+		<title>SPACINGCLOVER - indie dev official site</title>
+		<link rel="stylesheet" href="elements.css">
+		<link rel="stylesheet" href="effects.css">
+		<link rel="stylesheet" href="classes.css">
 		<link rel="icon" type="image/png" href="favicon.ico">
 	</head>
 
@@ -14,13 +16,15 @@
 		
 		<div id="container">
 		
-			<p class="header-text" id="title">SPACINGCLOVER</p>
+			<p class="header-text" id="title">
+				<span class="titlechar">S</span><span class="titlechar">P</span><span class="titlechar">A</span><span class="titlechar">C</span><span class="titlechar">I</span><span class="titlechar">N</span><span class="titlechar">G</span><span class="titlechar">C</span><span class="titlechar">L</span><span class="titlechar">O</span><span class="titlechar">V</span><span class="titlechar">E</span><span class="titlechar">R</span>
+			</p>
 			
 			<div id="tabs-bar">
-				<a href="#" class="header-text tab-button" onclick="setDisplay(PAGES.HOME);">HOME</a>
-				<a href="#" class="header-text tab-button" onclick="setDisplay(PAGES.GAMES);">GAMES</a>
-				<a href="#" class="header-text tab-button" onclick="setDisplay(PAGES.VIDEOS);">VIDEOS</a>
-				<a href="#" class="header-text tab-button" onclick="setDisplay(PAGES.CONTACT);">CONTACT</a>
+				<a class="header-text tab-button" onclick="setDisplay(PAGES.HOME);">HOME</a>
+				<a class="header-text tab-button" onclick="setDisplay(PAGES.GAMES);">GAMES</a>
+				<a class="header-text tab-button" onclick="setDisplay(PAGES.VIDEOS);">VIDEOS</a>
+				<a class="header-text tab-button" onclick="setDisplay(PAGES.CONTACT);">CONTACT</a>
 			</div>
 			
 			<div class="neon" id="page">
@@ -33,7 +37,7 @@
 				
 				<!-- GAMES -->
 				<div id="games-page">
-					<a href="#" onclick="setDisplay(PAGES.GAMESINFO);">Sign of the Beetle</a>
+					<a onclick="setDisplay(PAGES.GAMESINFO);">Sign of the Beetle</a>
 				</div>
 				
 				<!-- GAME INFO -->
@@ -67,7 +71,7 @@
 					For business inquiries, technical support (related to my games!), or press stuff, email me at
 					<div class="tooltip">
 						<span class="tooltiptext">Click to copy</span>
-						<a href="#" onclick="copyText('spacingclover@gmail.com')">spacingclover@gmail.com</a>
+						<a onclick="copyText('spacingclover@gmail.com')">spacingclover@gmail.com</a>
 					</div>
 				</div>
 				

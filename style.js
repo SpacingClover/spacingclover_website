@@ -82,6 +82,21 @@ function setDisplay(idx){
 	videosPage.style.display =    idx === PAGES.VIDEOS ? "block" : "none";
 	contactPage.style.display =   idx === PAGES.CONTACT ? "block" : "none";
 	gamesinfoPage.style.display = idx === PAGES.GAMESINFO ? "block" : "none";
+	updateAddress(getPageString(idx));
+}
+
+function getPageString(idx){
+	const keys = PAGES.keys;
+	for(let i=0;i<keys.length;i++){
+		if (idx == PAGES[keys[i]]){
+			return keys[i];
+		}
+	}
+	return "";
+}
+
+function updateAddress(pagename){
+	window.history.pushState({}, "", "/" + pagename.toLowerCase());
 }
 
 function initialize(){
@@ -95,7 +110,7 @@ function initialize(){
 	
 	setInterval(updateCircles);
 	console.log(window.history);
-	window.history.pushState({}, "", "/home");
+	updateAddress("home");
 }
 
 initialize();
