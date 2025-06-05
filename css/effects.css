@@ -20,7 +20,7 @@ span.rainbow {
 
 @font-face {
 	font-family: Cristola;
-	src: url(CristolaDisplay.ttf);
+	src: url("../assets/CristolaDisplay.ttf");
 }
 
 span.titlechar {

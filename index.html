@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>SPACINGCLOVER - indie dev official site</title>
-		<link rel="stylesheet" href="elements.css">
-		<link rel="stylesheet" href="effects.css">
-		<link rel="stylesheet" href="classes.css">
-		<link rel="icon" type="image/png" href="favicon.ico">
+		<link rel="stylesheet" href="css/elements.css">
+		<link rel="stylesheet" href="css/effects.css">
+		<link rel="stylesheet" href="css/classes.css">
+		<link rel="icon" type="image/png" href="img/favicon.ico">
 	</head>
 
 	<body onresize="onresize();">
@@ -21,27 +21,50 @@
 			</p>
 			
 			<div id="tabs-bar">
-				<a class="header-text tab-button" onclick="setDisplay(PAGES.HOME);">HOME</a>
-				<a class="header-text tab-button" onclick="setDisplay(PAGES.GAMES);">GAMES</a>
-				<a class="header-text tab-button" onclick="setDisplay(PAGES.VIDEOS);">VIDEOS</a>
-				<a class="header-text tab-button" onclick="setDisplay(PAGES.CONTACT);">CONTACT</a>
+				<a class="header-text tab-button" onclick="setDisplay('home');">HOME</a>
+				<a class="header-text tab-button" onclick="setDisplay('games');">GAMES</a>
+				<a class="header-text tab-button" onclick="setDisplay('videos');">VIDEOS</a>
+				<a class="header-text tab-button" onclick="setDisplay('contact');">CONTACT</a>
 			</div>
 			
 			<div class="neon" id="page">
 				
 				<!-- HOMEPAGE -->
-				<div id="home-page">
-					<p>spacingclover is an indie game developer with releases such as Sand Dungeon (2022) and Sign of the Beetle (202*).</p>
-					<p>their skills involve game design, math, programming, 3d modelling, and writing.</p>
+				<div id="home">
+					<p>I am an indie game developer who has historically worked on very small demos, and is now working on a larger project, Sign of the Beetle. My skills involve game design, math, programming, and 3d modelling.</p>
+					<br>
+					<p>I'm a big fan of puzzle games, and if you want my recomondations:</p>
+					<ul>
+						<li>Portal</li>
+						<li>Outer Wilds</li>
+						<li>The Witness</li>
+						<li>Chants of Senaar</li>
+						<li>The Talos Principle</li>
+						<li>Narbacular Drop</li>
+					</ul>
+					<br>
+					<p>My web design philosophy is very stuck in pre-2015 conventions, and even though this uses technology from far after that era, I love the centered-page-with-navbar style. I'm also a fan of the antiminimalist aesthetic, not just for the chaos factor but I love the freedom of css and I want to use it to it's full potential.</p>
+					<p>This website is still under construction, and all this will probably be moved to the Contact section, but for the moment I am unsure what else to put on the home page!</p>
 				</div>
 				
 				<!-- GAMES -->
-				<div id="games-page">
-					<a onclick="setDisplay(PAGES.GAMESINFO);">Sign of the Beetle</a>
+				<div id="games">
+					<h2>Released:</h2>
+					<div class="list-container" style="box-shadow:none"></div>
+					<h2>In Development:</h2>
+					<div class="list-container">
+						<a class="game-preview" onclick="setDisplay('signofthebeetle');">Sign of the Beetle</a>
+					</div>
+					<h2>Small, older projects:</h2>
+					<div class="list-container">
+						<a class="game-preview" onclick="setDisplay('sanddungeon');">Sand Dungeon</a>
+						<a class="game-preview" onclick="setDisplay('magicboardgame');">Magic Board Game</a>
+						<a class="game-preview" onclick="setDisplay('canyondiner');">Rock Climbing</a>
+					</div>
 				</div>
 				
 				<!-- GAME INFO -->
-				<div id="gamesinfo-page">
+				<div id="signofthebeetle">
 					<div class="hsection">
 						<div class="col left">
 							<h1 style="font-family:Cristola;">Sign of the Beetle</h1>
@@ -53,21 +76,51 @@
 							<a href="https://store.steampowered.com" target="_blank"> >> Buy Sign of the Beetle on Steam << </a>
 						</div>
 						<div class="col right">
-							<img src="sotb.png">
+							<img src="img/sotb.png">
 						</div>
 					</div>
 				</div>
 				
+				<div id="sanddungeon">
+					<img src="img/sand.jpg" style="float:right;display:inline;">
+					<h1>Sand Dungeon</h1>
+					<p>You must escape through the 6 rooms of this sand-filled dungeon by standing on various buttons that can:</p>
+					<ul>
+						<li>Raise the level of sand in the room</li>
+						<li>Lower the level of sand in the room</li>
+						<li>Hold open the exit door</li>
+					</ul>
+					<p>Combine this with spikes, ladders, and fences and you have a short, interesting puzzle experience.</p>
+					<a href="https://spacingclover.itch.io/sand-dungeon" target="_blank"> >> Play Sand Dungeon on Itch.io << </a>
+					<br>
+					<p>This was the first game I ever made in Godot. It was initially made in Roblox, until during bugfixing I ran into what I percieved to be technical limitations of Roblox. Of course, I was just an inexperienced programmer.</p>
+				</div>
+				
+				<div id="magicboardgame">
+					<img src="img/boards.png" style="float:right;display:inline;height:200px;">
+					<img src="img/maze.png" style="float:right;display:inline;height:200px;">
+					<h1>Magic Board Game</h1>
+					<p>This puzzle demo is a fairly short escape puzzle involving a game board whos pieces move larger parts of the game world!</p>
+					<a href="https://spacingclover.itch.io/magic-board-game" target="_blank"> >> Play Magic Board Game Puzzle Demo on Itch.io << </a>
+					<p>I was planning to make a pvp game with this, but that part didn't go very far. But I got this neat demo out of it, and some fun videos from development.</p>
+				</div>
+				
+				<div id="canyondiner">
+					<img src="img/climber.jpg" style="float:right;display:inline;height:200px;">
+					<h1>Climbing Demo</h1>
+					<p>Here is a tech demo of a rock climbing character controller, I wouldn't call it a full demo as it isnt terribly gamified, but its a neat sleek character controller.</p>
+					<a href="https://spacingclover.itch.io/climbing-demo" target="_blank"> >> Play the Climbing Demo on Itch.io << </a>
+					<p>This is one that I'm likely to revisit because the scope isn't actually very large, and I feel more confident managing npcs nowadays.</p>
+					<img src="img/bull.jpg" style="float:right;display:inline;height:200px;">
+				</div>
+				
 				<!-- VIDEOS -->
-				<div id="videos-page">
-					<iframe width="49%" height="280px" src="https://www.youtube.com/embed/Y0f_bthyD3s?si=a6NLgYjEea_7SwDI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-					<iframe width="49%" height="280px" src="https://www.youtube.com/embed/cTnNHQPJ9Ms?si=BvfHqj2O7nOvKY5x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-					<iframe width="49%" height="280px" src="https://www.youtube.com/embed/uBK-RseT2sE?si=NbReM420T9bgh9rk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-					<iframe width="49%" height="280px" src="https://www.youtube.com/embed/mglRkX9-OF0?si=2Lq8CZaeJuAJDfuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<div id="videos">
+					
 				</div>
 				
 				<!-- CONTACT -->
-				<div id="contact-page">
+				<div id="contact">
 					For business inquiries, technical support (related to my games!), or press stuff, email me at
 					<div class="tooltip">
 						<span class="tooltiptext">Click to copy</span>
@@ -88,6 +141,7 @@
 		<p id="legal">© spacingclover 2025, all rights reserved</p>
 	</footer>
 	
-	<script src="style.js"></script> 
+	<script src="js/pages.js"></script> 
+	<script src="js/style.js"></script> 
 
 </html>

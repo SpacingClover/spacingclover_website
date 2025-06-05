@@ -1,9 +1,13 @@
-div.neon {
+div.neon, div.list-container {
+	padding: 3em;
+	
 	background-color: black;
 	border-color: #0f0;
 	border-style: solid;
 	color: #0f0;
-	
+}
+
+div.neon {
 	box-shadow: 0 0 32px 2px #0f0;
 	-webkit-box-shadow: 0 0 32px 2px #0f0;
 	-moz-box-shadow: 0 0 32px 2px #0f0;
@@ -24,10 +28,13 @@ a.tab-button {
 	display: inline-block;
 	font-size: 1.5em;
 	text-decoration: none;
+	transition: transform 1s;
 }
 
 a.tab-button:hover {
 	text-decoration: underline;
+	transform: scale(120%) rotateZ(10deg);
+	transition: transform 5s ease-out;
 }
 
 
@@ -35,10 +42,6 @@ p.header-text {
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
-
-div.hsection {
-	width: 100%;
 }
 
 div.col {
@@ -108,4 +111,24 @@ a {
 
 a {
 	cursor: pointer;
+	text-decoration: underline;
+}
+
+div.list-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+div.list-container:empty {
+	padding: 1em;
+	color: #0f0;
+}
+
+div.list-container > a.game-preview {
+	
+}
+
+img {
+	margin: 0 0 0 1em;
 }

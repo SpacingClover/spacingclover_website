@@ -1,22 +1,14 @@
 const background = document.getElementById("background");
-const homePage = document.getElementById("home-page");
-const gamesPage = document.getElementById("games-page");
-const videosPage = document.getElementById("videos-page");
-const contactPage = document.getElementById("contact-page");
-const gamesinfoPage = document.getElementById("gamesinfo-page");
-const circles = [];
 
-const PAGES = {
-	"HOME" : 0,
-	"GAMES" : 1,
-	"VIDEOS" : 2,
-	"COMNTACT" : 3,
-	"GAMESINFO" : 4
-}
+const circles = [];
 
 function onresize(){
 	background.width = window.innerWidth;
 	background.height = window.innerHeight;
+}
+
+function copyText(string){
+	navigator.clipboard.writeText(string);
 }
 
 function randIntRange(min, max){
@@ -76,45 +68,10 @@ function updateCircles(){
 	}
 }
 
-function setDisplay(idx){
-	homePage.style.display =      idx === PAGES.HOME ? "block" : "none";
-	gamesPage.style.display =     idx === PAGES.GAMES ? "block" : "none";
-	videosPage.style.display =    idx === PAGES.VIDEOS ? "block" : "none";
-	contactPage.style.display =   idx === PAGES.CONTACT ? "block" : "none";
-	gamesinfoPage.style.display = idx === PAGES.GAMESINFO ? "block" : "none";
-	updateAddress(getPageString(idx));
+onresize();
+
+for(let i=0;i<300;i++){
+	circles.push(new Circle());
 }
 
-function getPageString(idx){
-	const keys = Object.keys(PAGES);
-	for(let i=0;i<keys.length;i++){
-		if (idx == PAGES[keys[i]]){
-			return keys[i];
-		}
-	}
-	return "";
-}
-
-function updateAddress(pagename){
-	window.history.pushState({}, "", "/" + pagename.toLowerCase());
-}
-
-function initialize(){
-	
-	setDisplay(PAGES.HOME);
-	
-	onresize();
-	for(let i=0;i<300;i++){
-		circles.push(new Circle());
-	}
-	
-	setInterval(updateCircles);
-	console.log(window.history);
-	updateAddress("home");
-}
-
-initialize();
-
-function copyText(string){
-	navigator.clipboard.writeText(string);
-}
+setInterval(updateCircles);
