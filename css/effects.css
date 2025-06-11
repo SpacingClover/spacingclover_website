@@ -5,24 +5,30 @@
 
 span.rainbow {
 	background: linear-gradient(to right, yellow, cyan, magenta, yellow);
+}
+
+span.green {
+	background: linear-gradient(30deg, #0f0, #5f5, #0f0);
+}
+
+span.text-clip {
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
 	font-weight: bold;
-	
-	animation: rainbow-gradient 1s ease-in-out infinite alternate;
 }
 
-@keyframes rainbow-gradient {
+span.oscillateX {
+	animation: oscillateX 1s ease-in-out infinite alternate;
+}
+
+
+@keyframes oscillateX {
 	0%{background-position-x: 0%;}
-	100%{background-position-x: 300px;}
+	100%{background-position-x: 500px;}
 }
 
 @font-face {
 	font-family: Cristola;
 	src: url("../assets/CristolaDisplay.ttf");
-}
-
-span.titlechar {
-	display: inline-block;
 }

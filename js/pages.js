@@ -3,7 +3,7 @@ function setDisplay(pagename){
 	for (let i=0;i<pages.length;i++){
 		pages[i].style.display = "none";
 	}
-	const page = document.getElementById(pagename);
+	let page = document.getElementById(pagename);
 	if (page == null){
 		page = document.getElementById("home");
 	}
