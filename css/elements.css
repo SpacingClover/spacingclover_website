@@ -32,7 +32,6 @@ body {
 }
 
 #page {
-	height: auto !important;
     min-height: 100%;
     height: 100%;
     position: relative;

@@ -132,3 +132,17 @@ div.list-container > a.game-preview {
 img {
 	margin: 0 0 0 1em;
 }
+
+a.game-preview {
+	min-width: 33%;
+	min-height: 2em;
+	line-height: 2em;
+	background-color: gray;
+	border-radius: 15px;
+	border-width: 5px;
+	border-color: lightgray;
+	text-align: center;
+	
+	text-decoration: none;
+	
+}

@@ -8,11 +8,11 @@ function setDisplay(pagename){
 		page = document.getElementById("home");
 	}
 	page.style.display = "block";
-	updateAddress(pagename);
+	//updateAddress(pagename);
 }
 
-function updateAddress(pagename){
-	window.history.pushState({}, "", "/" + pagename.toLowerCase());
-}
+//function updateAddress(pagename){
+//	window.history.pushState({}, "", "/" + pagename.toLowerCase());
+//}
 
-setDisplay(window.location.pathname);
+setDisplay("home");
