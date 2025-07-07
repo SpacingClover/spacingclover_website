@@ -2,6 +2,14 @@ const background = document.getElementById("background");
 
 const circles = [];
 
+let lastTime = performance.now();
+
+function getDelta(){
+	let now = performance.now();
+    let dt = now - lastTime;
+    lastTime = now;
+}
+
 function onresize(){
 	background.width = window.innerWidth;
 	background.height = window.innerHeight;
@@ -25,9 +33,9 @@ class Circle {
 		this.defaultValues();
 		this.move(200);
 	}
-	move(steps=1){
-		this.x += Math.cos(this.direction) * this.speed * steps;
-		this.y += Math.sin(this.direction) * this.speed * steps;
+	move(delta=1, steps=1){
+		this.x += Math.cos(this.direction) * this.speed * steps * delta;
+		this.y += Math.sin(this.direction) * this.speed * steps * delta;
 	}
 	isOutOfBounds(x1, y1, x2, y2){
 		x1 -= this.size/2;
@@ -57,11 +65,14 @@ function updateCircles(){
 	const ctx = background.getContext("2d");
 	ctx.clearRect(0, 0, background.width, background.height);
 	
+	let delta = getDelta();
+	
 	for(let i=0;i<circles.length;i++){
 		
 		drawCircle(circles[i], ctx);
 		
-		circles[i].move();
+		circles[i].move(delta);
+		
 		if(circles[i].isOutOfBounds(0, 0, background.width, background.height)){
 			circles[i].defaultValues();
 		}
